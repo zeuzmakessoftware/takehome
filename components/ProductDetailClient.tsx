@@ -11,7 +11,6 @@ interface ProductDetailClientProps {
 export default function ProductDetailClient({ product }: ProductDetailClientProps) {
   const { addToCart } = useCart();
 
-  // Disable page scrolling while this component is mounted
   useEffect(() => {
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -21,10 +20,8 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
   }, []);
 
   return (
-    // Lower z-index than the navbar so clicks still register on the navbar
     <div className="inset-0 z-40 flex items-center justify-center">
       <div className="w-[90%] max-w-4xl mt-32 bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
-        {/* Image Section */}
         <div className="relative w-full md:w-1/2 h-80 md:h-auto group">
           <Image
             src={product.image}
@@ -38,7 +35,6 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
           </div>
         </div>
 
-        {/* Details Section */}
         <div className="w-full md:w-1/2 p-16 flex flex-col justify-between">
           <div>
             <h1 className="text-4xl font-extrabold text-gray-800 tracking-tight">

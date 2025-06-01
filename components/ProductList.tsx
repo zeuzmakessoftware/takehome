@@ -29,13 +29,11 @@ export default function ProductList() {
 
   return (
     <div className="relative pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      {/* Background decorative elements */}
       <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-br from-indigo-100 to-purple-100 h-full w-full -z-10"></div>
       <div className="absolute -top-10 left-1/4 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
       <div className="absolute -top-10 right-1/4 w-72 h-72 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
       <div className="absolute -top-10 left-1/3 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
       
-      {/* Page header */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
           <span className="block">Discover Amazing</span>
@@ -46,14 +44,12 @@ export default function ProductList() {
         </p>
       </div>
       
-      {/* Category filter */}
       <CategoryFilter
         categories={categories}
         active={activeCat}
         onChange={setActiveCat}
       />
       
-      {/* Products grid with animation */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {filtered.length > 0 ? (
           filtered.map((product, index) => (
