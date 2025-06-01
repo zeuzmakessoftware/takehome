@@ -1,5 +1,6 @@
 // app/layout.tsx
 import "./globals.css";
+import "./styles.css"; // Import our custom CSS styles
 import type { ReactNode } from "react";
 import Providers from "@/components/Providers";
 
@@ -10,15 +11,8 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="html-root">
       <head>
-        {/* Tailwind’s precompiled stylesheet via CDN */}
-        <link
-          href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css"
-          rel="stylesheet"
-        />
-
-        {/* Google Fonts, etc. */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -30,7 +24,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-gray-200 font-sans antialiased">
+      <body className="app-body">
         <Providers>{children}</Providers>
       </body>
     </html>

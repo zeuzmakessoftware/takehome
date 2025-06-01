@@ -12,22 +12,22 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
   const { addToCart } = useCart();
 
   return (
-    <div className="max-w-4xl mx-auto mt-8 flex flex-col md:flex-row gap-8">
+    <div className="product-detail-container">
       <Image
         src={product.image}
         alt={product.name}
         width={500}
         height={500}
-        className="w-full md:w-1/2 h-auto object-cover rounded"
+        className="product-detail-image"
         priority
       />
-      <div className="flex flex-col">
-        <h1 className="text-3xl font-bold">{product.name}</h1>
-        <p className="mt-4 text-gray-700">{product.description}</p>
-        <p className="mt-4 text-2xl font-semibold">${product.price}</p>
+      <div className="product-detail-content">
+        <h1 className="product-detail-title">{product.name}</h1>
+        <p className="product-detail-description">{product.description}</p>
+        <p className="product-detail-price">${product.price}</p>
         <button
           onClick={() => addToCart(product)}
-          className="mt-6 bg-green-600 text-white py-2 rounded hover:bg-green-700"
+          className="product-detail-button"
         >
           Add to Cart
         </button>

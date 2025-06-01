@@ -14,19 +14,16 @@ export default function CategoryFilter({
   onChange,
 }: CategoryFilterProps) {
   return (
-    <div className="relative mb-8 mt-4">
-      <div className="absolute inset-0 h-12 bg-gradient-to-r from-violet-100 via-purple-100 to-pink-100 rounded-xl opacity-50 blur-xl"></div>
-      <div className="relative flex items-center justify-center space-x-3 overflow-x-auto py-4 px-2 scrollbar-hide">
+    <div className="category-filter">
+      <div className="category-filter-bg"></div>
+      <div className="category-filter-container">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => onChange(cat)}
-            className={`
-              px-5 py-2.5 rounded-xl whitespace-nowrap font-medium transition-all duration-300 
-              ${active === cat
-                ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-500/30 transform scale-105"
-                : "bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 hover:border-gray-300 hover:shadow-sm"}
-            `}
+            className={`category-button ${
+              active === cat ? "category-button-active" : "category-button-inactive"
+            }`}
           >
             <div className="flex items-center">
               {active === cat && (

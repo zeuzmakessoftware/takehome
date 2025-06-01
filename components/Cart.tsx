@@ -12,9 +12,7 @@ export default function Cart() {
 
   return (
     <div
-      className={`fixed top-36 right-0 w-80 h-64 bg-neutral-900 invert rounded-[2em] p-4 shadow-lg transform transition-transform ${
-        isCartOpen ? "translate-x-0" : "translate-x-full"
-      }`}
+      className={`cart-sidebar ${isCartOpen ? "" : "cart-sidebar-hidden"}`}
     >
       <div className="p-4 flex items-center justify-between border-b">
         <h2 className="text-xl font-bold">Your Cart</h2>

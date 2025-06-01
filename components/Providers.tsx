@@ -10,7 +10,7 @@ export default function Providers({ children }: { children: ReactNode }) {
     <CartProvider>
       <Navbar />
       <Cart />
-      <div className="mt-16">{children}</div>
+      <div className="content-container">{children}</div>
     </CartProvider>
   );
 }

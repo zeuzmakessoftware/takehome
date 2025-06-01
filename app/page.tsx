@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen w-screen max-w-full bg-gradient-to-b from-white to-gray-200">
+    <main className="main-container">
       <Navbar />
       <ProductList />
     </main>
