@@ -72,8 +72,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Set repository name
+        run: |
+          # Extract repository name from GITHUB_REPOSITORY (owner/repo)
+          REPO_NAME=$(echo $GITHUB_REPOSITORY | cut -d'/' -f2)
+          echo "REPOSITORY_NAME=$REPO_NAME" >> $GITHUB_ENV
+          echo "Repository name set to: $REPO_NAME"
+
       - name: Build with Next.js
         run: npm run build
+        env:
+          REPOSITORY_NAME: ${{ env.REPOSITORY_NAME }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
