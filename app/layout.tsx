@@ -1,7 +1,7 @@
+// app/layout.tsx
 import "./globals.css";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import Providers from "@/components/Providers";
-import Script from "next/script";
 
 export const metadata = {
   title: "Fictional Store | Premium Shopping Experience",
@@ -12,10 +12,23 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <Script src="https://cdn.tailwindcss.com" strategy="beforeInteractive"></Script>
+        {/* Tailwind’s precompiled stylesheet via CDN */}
+        <link
+          href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css"
+          rel="stylesheet"
+        />
+
+        {/* Google Fonts, etc. */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className="min-h-screen bg-gray-200 font-sans antialiased">
         <Providers>{children}</Providers>
